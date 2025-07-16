@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+<Appenders>
+    <Console name="console">
+        <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss}[%l] - %m %n"/>
+    </Console>
+    <RollingFile name="rollingFile" filePattern="c:/Users/user/bootlog2/bootlog-%d{yyyy-MM-dd}.log" fileName="c:/Users/user/bootlog2/spring-boot.log">
+        <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss}[%l] - %m %n"/>
+        <Policies>
+            <TimeBasedTriggeringPolicy interval="1"/>
+        </Policies>
+    </RollingFile>
+</Appenders>
+<Loggers>
+<Logger name="com.bs.boot" level="debug">
+    <AppenderRef ref="rollingFile"/>
+</Logger>
+<Logger name="org.springframework.context" level="INFO"/>
+<Logger name="org.springframework.core" level="INFO"/>
+<Logger name="org.springframework.beans" level="INFO"/>
+<Logger name="org.springframework.web" level="INFO"/>
+<Root level="INFO">
+    <AppenderRef ref="console"/>
+</Root>
+</Loggers>
+  </Configuration>

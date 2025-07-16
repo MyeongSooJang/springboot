@@ -23,6 +23,7 @@ public class StartSetting implements CommandLineRunner {
       log.info("database=" + environment.getProperty("spring.datasource.url"));
       log.info("database=" + environment.getProperty("spring.datasource.username"));
       log.info(webApplicationContext.getServletContext().getRealPath("/"));
-      Arrays.stream(webApplicationContext.getBeanDefinitionNames()).forEach(bean->log.info(bean));
+
+      Arrays.stream(webApplicationContext.getBeanDefinitionNames()).filter(n->n.contains("View")).forEach(System.out::println);
     }
 }

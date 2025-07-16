@@ -1,0 +1,11 @@
+
+CREATE TABLE NOTICE(
+                       NOTICE_NO NUMBER PRIMARY KEY,
+                       NOTICE_TITLE VARCHAR2(100) NOT NULL,
+                       NOTICE_WRITER VARCHAR2(15) NOT NULL,
+                       NOTICE_CONTENT VARCHAR2(4000) NOT NULL,
+                       NOTICE_DATE DATE DEFAULT SYSDATE,
+                       FILEPATH VARCHAR2(300),
+                       STATUS VARCHAR2(1) DEFAULT 'Y'
+);
+CREATE SEQUENCE SEQ_NOTICE_NO;

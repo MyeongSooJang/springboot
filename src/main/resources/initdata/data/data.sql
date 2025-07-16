@@ -1,0 +1,2 @@
+INSERT INTO NOTICE VALUES(SEQ_NOTICE_NO.NEXTVAL,'공지사항테스트','admin','공지사항테스트입니다',default,null,default);
+INSERT INTO NOTICE VALUES(SEQ_NOTICE_NO.NEXTVAL,'마지막프로젝트 힘내자','admin','마지막 프로젝트 화이팅~!!.',default,null,default);

@@ -26,7 +26,7 @@ public class HomeController {
     private final Environment environment;
 
 
-    @RequestMapping("/")
+    @RequestMapping("/ptgytf")
     public String index(){
         log.info(home);
         log.info(ip);
