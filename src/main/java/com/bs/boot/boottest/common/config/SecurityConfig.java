@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsUtils;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -46,8 +47,11 @@ public class SecurityConfig implements WebMvcConfigurer {
                 })
                 .authorizeHttpRequests(authorize -> {
                     authorize
+                            .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
                             .requestMatchers("/resources/**").permitAll()
                             .requestMatchers("/admin/**").hasAnyRole("ADMIN")
+                            .requestMatchers("/demos").permitAll()
+                            .requestMatchers("/demos/**").permitAll()
                             .anyRequest().authenticated();
                 })
                 .authenticationProvider(dbProvider)
