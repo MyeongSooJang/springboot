@@ -10,5 +10,5 @@ public interface MemberService {
     List<MemberDTO> findAllMembers();
     List<MemberDTO> findAllMemberPaging(Integer cPage, Integer numPerpage);
     List<MemberDTO> findAllMamberPaging(Pageable pageable);
-
+    String loginToken(MemberDTO memberDTO);
 }
